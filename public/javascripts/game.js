@@ -1,5 +1,6 @@
 (function(){
     window.onload = function(){
+        var eventHandler = new EventHandler();
         var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x1099bb});
         document.body.appendChild(renderer.view);
 
@@ -16,10 +17,11 @@
 
         stage.addChild(bunny);
 
+        eventHandler.init(bunny);
         var animate = function(){
             requestAnimationFrame( animate );
 
-            bunny.rotation += 0.1;
+            // bunny.rotation += 0.1;
             renderer.render(stage);
         };
 
